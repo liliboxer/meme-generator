@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import Header from './Header';
+import Image from './Image';
 import Footer from './Footer';
 
 export default class App extends Component {
@@ -14,7 +15,8 @@ export default class App extends Component {
     return (
       <>
         <h1>Hello World</h1>
-        <Header />
+        <Header/>
+        <Image/>
         <Footer/>
       </>
     );
