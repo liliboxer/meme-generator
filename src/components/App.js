@@ -14,7 +14,7 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <h1>Hello World</h1>
+        <h1>Bunnies!</h1>
         <Header/>
         <Image/>
         <Footer/>
