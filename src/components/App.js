@@ -1,23 +1,27 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-import Header from './Header';
-import Image from './Image';
-import Footer from './Footer';
+import MemeInput from './MemeInput';
+import MemeDisplay from './MemeDisplay';
 
 export default class App extends Component {
   state = {
-    header: '',
-    footer: '',
-    imageURL: ''
+    top: '',
+    imageURL: '',
+    bottom: ''
   }
 
+
+
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  }
+
+
   render() {
+    const { top, imageURL, bottom } = this.state; 
     return (
       <>
-        <h1>Bunnies!</h1>
-        <Header/>
-        <Image/>
-        <Footer/>
+       <MemeInput top={top} imageURL={imageURL} bottom={bottom} handleChange={this.handleChange}/>
+        <MemeDisplay  top={top} imageURL={imageURL} bottom={bottom}/>
       </>
     );
   }
