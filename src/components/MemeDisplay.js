@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './MemeDisplay.css';
 
 function MemeDisplay({ top, imageURL, bottom }) {
   return (
-    <section>
-      <p>{top}</p>
+    <section className={styles.MemeDisplay}>
+      <p className={styles.centeredTop}>{top}</p>
       <img src={imageURL}></img>
-      <p>{bottom}</p>
+      <p className={styles.centeredBottom}>{bottom}</p>
     </section>
   );
 }

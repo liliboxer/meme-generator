@@ -8,7 +8,6 @@ function MemeInput({ top, imageURL, bottom, handleChange }) {
         <input name="top" value={top} placeholder="top text" onChange={(event) => handleChange(event)}></input>
         <input name="imageURL" value={imageURL}placeholder="image URL" onChange={(event) => handleChange(event)}></input>
         <input name="bottom" value={bottom}placeholder="bottom text" onChange={(event) => handleChange(event)}></input>
-        <button>Meme-i-fy!</button>
       </form>
     </>
   );
