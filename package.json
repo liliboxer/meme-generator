@@ -28,7 +28,8 @@
     "dom-to-image": "^2.6.0",
     "file-saver": "^2.0.2",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-images-upload": "^1.2.7"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

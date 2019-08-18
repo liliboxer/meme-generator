@@ -7,15 +7,22 @@ import Download from './Download';
 import domtoimage from 'dom-to-image';
 import FileSaver from 'file-saver';
 
+
 export default class App extends Component {
   state = {
     top: '',
     imageURL: '',
-    bottom: ''
+    bottom: '',
+    file: null
   }
 
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
+  }
+
+
+  handleUpload = (event) => {
+    this.setState({ file: URL.createObjectURL(event.target.files[0]) });
   }
 
   downloadMeme = () => {
@@ -28,7 +35,7 @@ export default class App extends Component {
         FileSaver.saveAs(img.src, 'saved-meme');
       })
       .catch(function(error) {
-        console.error('stop messing everything up', error);
+        console.error('nothing is working!', error);
       });
   }
 
@@ -37,9 +44,27 @@ export default class App extends Component {
     const { top, imageURL, bottom } = this.state; 
     return (
       <>
-        <MemeInput top={top} imageURL={imageURL} bottom={bottom} handleChange={this.handleChange}/>
-        <MemeDisplay  top={top} imageURL={imageURL} bottom={bottom}/>
-        <Download downloadMeme={this.downloadMeme}/>
+        <MemeInput
+          top={top}
+          imageURL={imageURL}
+          bottom={bottom}
+          handleChange={this.handleChange}
+        />
+
+      <div>
+        <input type="file" onChange={this.handleUpload}/>
+        <img src={this.state.file}/>
+      </div>
+
+        <MemeDisplay
+          top={top}
+          imageURL={imageURL}
+          bottom={bottom}
+        />
+
+        <Download 
+          downloadMeme={this.downloadMeme}
+        />
       </>
     );
   }
