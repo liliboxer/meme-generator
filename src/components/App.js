@@ -6,6 +6,7 @@ import Download from './Download';
 
 import domtoimage from 'dom-to-image';
 import FileSaver from 'file-saver';
+import UploadImage from './UploadImage';
 
 
 export default class App extends Component {
@@ -19,7 +20,6 @@ export default class App extends Component {
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
   }
-
 
   handleUpload = (event) => {
     this.setState({ file: URL.createObjectURL(event.target.files[0]) });
@@ -39,9 +39,8 @@ export default class App extends Component {
       });
   }
 
-
   render() {
-    const { top, imageURL, bottom } = this.state; 
+    const { top, imageURL, bottom, file } = this.state; 
     return (
       <>
         <MemeInput
@@ -51,15 +50,15 @@ export default class App extends Component {
           handleChange={this.handleChange}
         />
 
-      <div>
-        <input type="file" onChange={this.handleUpload}/>
-        <img src={this.state.file}/>
-      </div>
+        <UploadImage 
+          handleUpload={this.handleUpload}
+        />
 
         <MemeDisplay
           top={top}
           imageURL={imageURL}
           bottom={bottom}
+          file={file}
         />
 
         <Download 
