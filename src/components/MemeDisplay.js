@@ -4,7 +4,7 @@ import styles from './MemeDisplay.css';
 
 function MemeDisplay({ top, imageURL, bottom }) {
   return (
-    <section className={styles.MemeDisplay}>
+    <section className={styles.MemeDisplay} id="meme">
       <p className={styles.centeredTop}>{top}</p>
       <img src={imageURL}></img>
       <p className={styles.centeredBottom}>{bottom}</p>
