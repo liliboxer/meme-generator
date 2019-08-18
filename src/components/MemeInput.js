@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function MemeInput({ top, imageURL, bottom, handleChange }) {
+function MemeInput({ top, bottom, handleChange }) {
   return (
     <>
       <form>
         <input name="top" value={top} placeholder="top text" onChange={(event) => handleChange(event)}></input>
-        <input name="imageURL" value={imageURL}placeholder="image URL" onChange={(event) => handleChange(event)}></input>
         <input name="bottom" value={bottom}placeholder="bottom text" onChange={(event) => handleChange(event)}></input>
       </form>
     </>

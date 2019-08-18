@@ -45,13 +45,14 @@ export default class App extends Component {
       <>
         <MemeInput
           top={top}
-          imageURL={imageURL}
           bottom={bottom}
           handleChange={this.handleChange}
         />
 
         <UploadImage 
           handleUpload={this.handleUpload}
+          handleChange={this.handleChange}
+          imageURL={imageURL}
         />
 
         <MemeDisplay
