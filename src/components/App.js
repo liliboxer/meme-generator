@@ -25,7 +25,7 @@ export default class App extends Component {
       .then(function(dataURL) {
         let img = new Image();
         img.src = dataURL;
-        FileSaver.saveAs(img, 'saved-meme');
+        FileSaver.saveAs(img.src, 'saved-meme');
       })
       .catch(function(error) {
         console.error('stop messing everything up', error);
