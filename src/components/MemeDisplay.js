@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './MemeDisplay.css';
 
-function MemeDisplay({ imageURL, file, color, formattedText, font }) {
+function MemeDisplay({ top, bottom, imageURL, file, color, font }) {
   return (
     <section className={styles.MemeDisplay} id="meme">
       <pre
         style={{ color: color } }
         className={styles.centeredTop}>
-        {formattedText}
+        {top}
       </pre>
       <img src={imageURL || file } ></img>
       <pre
@@ -17,7 +17,7 @@ function MemeDisplay({ imageURL, file, color, formattedText, font }) {
           fontFamily: font
         }}
         className={styles.centeredBottom}>
-        {formattedText}
+        {bottom}
       </pre>
     </section>
   );
@@ -28,7 +28,9 @@ MemeDisplay.propTypes = {
   file: PropTypes.oneOfType([null, PropTypes.object]),
   color: PropTypes.string.isRequired,
   formattedText: PropTypes.string.isRequired,
-  font: PropTypes.string.isRequired
+  font: PropTypes.string.isRequired,
+  top: PropTypes.string.isRequired,
+  bottom: PropTypes.string.isRequired
 };
 
 export default MemeDisplay;

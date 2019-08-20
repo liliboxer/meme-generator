@@ -86,7 +86,7 @@ export default class App extends Component {
           color={color}
           handleColorChange={this.handleColorChange}
           font={font}
-          handleFontChange={this.handleFontChange}
+          handleChange={this.handleChange}
         />
 
         <MemeDisplay
@@ -95,6 +95,8 @@ export default class App extends Component {
           color={color}
           formattedText={formattedText}
           font={font}
+          top={top}
+          bottom={bottom}
         />
 
         <Download 
