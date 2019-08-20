@@ -15,7 +15,9 @@ export default class App extends Component {
     imageURL: '',
     bottom: '',
     file: null,
-    color: ''
+    color: '',
+    font: 'Times New Roman',
+    formattedText: ''
   }
 
 
@@ -25,6 +27,14 @@ export default class App extends Component {
 
   handleColorChange = ({ target }) => {
     this.setState({ color: target.value });
+  }
+
+  handleFontChange = (event) => {
+    event.preventDefault();
+    this.setState(state => ({
+      font: state.font
+    }));
+    console.log(this.state);
   }
 
   handleUpload = (event) => {
@@ -56,7 +66,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { top, imageURL, bottom, file, color } = this.state; 
+    const { top, imageURL, bottom, file, color, font, formattedText } = this.state; 
     return (
       <>
         <MemeInput
@@ -75,14 +85,16 @@ export default class App extends Component {
         <TextFormatter
           color={color}
           handleColorChange={this.handleColorChange}
+          font={font}
+          handleFontChange={this.handleFontChange}
         />
 
         <MemeDisplay
-          top={top}
           imageURL={imageURL}
-          bottom={bottom}
           file={file}
           color={color}
+          formattedText={formattedText}
+          font={font}
         />
 
         <Download 
