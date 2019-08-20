@@ -7,22 +7,38 @@ import Download from './Download';
 import domtoimage from 'dom-to-image';
 import FileSaver from 'file-saver';
 import UploadImage from './UploadImage';
-
+import TextFormatter from './TextFormatter';
 
 export default class App extends Component {
   state = {
     top: '',
     imageURL: '',
     bottom: '',
-    file: null
+    file: null,
+    color: ''
   }
+
 
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
   }
 
+  handleColorChange = ({ target }) => {
+    this.setState({ color: target.value });
+  }
+
   handleUpload = (event) => {
     this.setState({ file: URL.createObjectURL(event.target.files[0]) });
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+    this.setState(state => {
+      return ({
+        top: state.top,
+        bottom: state.bottom
+      });
+    });
   }
 
   downloadMeme = () => {
@@ -40,13 +56,14 @@ export default class App extends Component {
   }
 
   render() {
-    const { top, imageURL, bottom, file } = this.state; 
+    const { top, imageURL, bottom, file, color } = this.state; 
     return (
       <>
         <MemeInput
           top={top}
           bottom={bottom}
           handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
         />
 
         <UploadImage 
@@ -55,11 +72,17 @@ export default class App extends Component {
           imageURL={imageURL}
         />
 
+        <TextFormatter
+          color={color}
+          handleColorChange={this.handleColorChange}
+        />
+
         <MemeDisplay
           top={top}
           imageURL={imageURL}
           bottom={bottom}
           file={file}
+          color={color}
         />
 
         <Download 
