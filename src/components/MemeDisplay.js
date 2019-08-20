@@ -6,7 +6,10 @@ function MemeDisplay({ top, bottom, imageURL, file, color, font }) {
   return (
     <section className={styles.MemeDisplay} id="meme">
       <pre
-        style={{ color: color } }
+        style={{ 
+          color: color,
+          fontFamily: font
+        }}
         className={styles.centeredTop}>
         {top}
       </pre>
