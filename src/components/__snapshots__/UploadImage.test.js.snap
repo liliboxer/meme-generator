@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UploadImage component renders UploadImage 1`] = `
+<section>
+  <input
+    type="file"
+  />
+  <input
+    name="imageURL"
+    onChange={[Function]}
+    placeholder="image URL"
+  />
+</section>
+`;

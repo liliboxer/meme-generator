@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextFormatter component renders TextFormatter 1`] = `
+<form>
+  <input
+    name="color"
+    onChange={[Function]}
+    type="color"
+  />
+  <select
+    name="font"
+    onChange={[Function]}
+  >
+    <option
+      key="Arial"
+      value="Arial"
+    >
+      Arial
+    </option>
+    <option
+      key="Helvetica"
+      value="Helvetica"
+    >
+      Helvetica
+    </option>
+    <option
+      key="Arial Black"
+      value="Arial Black"
+    >
+      Arial Black
+    </option>
+    <option
+      key="Comic Sans MS"
+      value="Comic Sans MS"
+    >
+      Comic Sans MS
+    </option>
+    <option
+      key="Impact"
+      value="Impact"
+    >
+      Impact
+    </option>
+    <option
+      key="Charcoal"
+      value="Charcoal"
+    >
+      Charcoal
+    </option>
+    <option
+      key="Lucida Sans Unicode"
+      value="Lucida Sans Unicode"
+    >
+      Lucida Sans Unicode
+    </option>
+    <option
+      key="Lucida Grande"
+      value="Lucida Grande"
+    >
+      Lucida Grande
+    </option>
+    <option
+      key="Courier New"
+      value="Courier New"
+    >
+      Courier New
+    </option>
+    <option
+      key="Lucida Console"
+      value="Lucida Console"
+    >
+      Lucida Console
+    </option>
+  </select>
+</form>
+`;
