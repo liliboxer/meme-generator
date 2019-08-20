@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MemeDisplay component renders MemeDisplay 1`] = `
+<section
+  className="MemeDisplay"
+  id="meme"
+>
+  <pre
+    className="centeredTop"
+    style={
+      Object {
+        "color": undefined,
+        "fontFamily": undefined,
+      }
+    }
+  />
+  <img />
+  <pre
+    className="centeredBottom"
+    style={
+      Object {
+        "color": undefined,
+        "fontFamily": undefined,
+      }
+    }
+  />
+</section>
+`;
