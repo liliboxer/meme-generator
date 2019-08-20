@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function TextFormatter({ color, handleColorChange, font, handleChange }) {
-  const fontArr = ['Arial', 'Helvetica', 'Times New Roman'];
+  const fontArr = ['Arial', 'Helvetica', 'Arial Black', 'Comic Sans MS', 'Impact', 'Charcoal', 'Lucida Sans Unicode', 'Lucida Grande', 'Courier New', 'Lucida Console'];
   const mappedFonts = fontArr.map(font => {
     return <option key={font} value={font}>{font}</option>;
   });
